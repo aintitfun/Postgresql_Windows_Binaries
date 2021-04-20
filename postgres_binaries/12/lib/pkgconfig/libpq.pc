@@ -1,9 +1,0 @@
-Name: libpq
-Description: PostgreSQL libpq library
-Url: http://www.postgresql.org/
-Version: 12.6
-Requires: 
-Requires.private: 
-Cflags: -I/home/papa/build_extensions/postgres_binaries/12/include
-Libs: -L/home/papa/build_extensions/postgres_binaries/12/lib -lpq
-Libs.private: -L/usr/local/openssl64/lib -lssl -lcrypto -lm -lshell32 -lws2_32 -lsecur32
