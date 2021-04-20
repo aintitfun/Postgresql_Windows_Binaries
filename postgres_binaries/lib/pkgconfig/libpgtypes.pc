@@ -1,0 +1,9 @@
+Name: libpgtypes
+Description: PostgreSQL libpgtypes library
+Url: http://www.postgresql.org/
+Version: 12.6
+Requires: 
+Requires.private: 
+Cflags: -I/home/papa/build_extensions/postgres_binaries/include
+Libs: -L/home/papa/build_extensions/postgres_binaries/lib -lpgtypes
+Libs.private: -L/usr/local/openssl64/lib -lm

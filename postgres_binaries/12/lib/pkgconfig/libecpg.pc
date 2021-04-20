@@ -1,0 +1,9 @@
+Name: libecpg
+Description: PostgreSQL libecpg library
+Url: http://www.postgresql.org/
+Version: 12.6
+Requires: 
+Requires.private: libpq libpgtypes
+Cflags: -I/home/papa/build_extensions/postgres_binaries/12/include
+Libs: -L/home/papa/build_extensions/postgres_binaries/12/lib -lecpg
+Libs.private: -L/usr/local/openssl64/lib -lm

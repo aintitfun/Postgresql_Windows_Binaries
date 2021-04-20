@@ -1,0 +1,9 @@
+Name: libecpg_compat
+Description: PostgreSQL libecpg_compat library
+Url: http://www.postgresql.org/
+Version: 12.6
+Requires: 
+Requires.private: libecpg libpgtypes
+Cflags: -I/home/papa/build_extensions/postgres_binaries/include
+Libs: -L/home/papa/build_extensions/postgres_binaries/lib -lecpg_compat
+Libs.private: -L/usr/local/openssl64/lib -lm
