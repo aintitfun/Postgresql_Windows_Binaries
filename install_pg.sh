@@ -13,7 +13,9 @@ cd postgres
 #this is to use a precompiled linux zic for make install on crosscompile
 #sed -i 's/ZIC= .\/zic/ZIC= \/home\/papa\/Postgresql_Windows_Binaries\/zic/g' src/timezone/Makefile
 #sed -i '1s/^/ZIC= \/home\/papa\/Postgresql_Windows_Binaries\/zic/g' / src/timezone/Makefile
+mv /usr/sbin/zic /usr/sbin/zic_
 CFLAGS="-D WINVER=0x0600 -D _WIN32_WINNT=0x0600" LIBS="-ladvapi32" ./configure --prefix=${HOME}/Postgresql_Windows_Binaries/postgres_binaries/${1} --host=x86_64-w64-mingw32 --with-openssl --with-includes=$rootdir/include --with-libraries=$rootdir/lib
 export ZIC=/home/papa/Postgresql_Windows_Binaries/zic
 make clean && make  && make install
+mv /usr/sbin/zic_ /usr/sbin/zic
 
