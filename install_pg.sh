@@ -8,6 +8,14 @@ case "$2" in
     "--no-download")
 	;;
 esac
+case "$3" in
+    "--with-debug")
+	debug_string="CFLAGS=-O0 --enable-debug"
+	;;
+    "")
+	debug_string=
+        ;;
+esac
 rootdir=`pwd`/openssl_binaries
 cd postgres
 #this is to use a precompiled linux zic for make install on crosscompile
@@ -15,7 +23,7 @@ cd postgres
 #sed -i '1s/^/ZIC= \/home\/papa\/Postgresql_Windows_Binaries\/zic/g' / src/timezone/Makefile
 sudo mv /usr/sbin/zic /usr/sbin/zic_
 export ZIC=/home/papa/Postgresql_Windows_Binaries/zic
-CFLAGS="-D WINVER=0x0600 -D _WIN32_WINNT=0x0600" LIBS="-ladvapi32" ./configure --prefix=${HOME}/Postgresql_Windows_Binaries/postgres_binaries/${1} --host=x86_64-w64-mingw32 --with-openssl --with-includes=$rootdir/include --with-libraries=$rootdir/lib
+CFLAGS="-D WINVER=0x0600 -D _WIN32_WINNT=0x0600" LIBS="-ladvapi32" ./configure --prefix=${HOME}/Postgresql_Windows_Binaries/postgres_binaries/${1} --host=x86_64-w64-mingw32 --with-openssl --with-includes=$rootdir/include --with-libraries=$rootdir/lib $debug_string
 make clean && make  && make install
 sudo mv /usr/sbin/zic_ /usr/sbin/zic
 
