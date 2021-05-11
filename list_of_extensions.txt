@@ -1,2 +1,3 @@
 odbc_fdw
 pg_background
+pg_repack
