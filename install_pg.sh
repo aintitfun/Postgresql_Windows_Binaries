@@ -1,3 +1,6 @@
+#!/usr/bin/bash
+sudo null 2>/dev/null
+
 mkdir -p postgres_sources/${1}
 cd postgres_sources/${1}
 case "$2" in

@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 rootdir=`pwd`
 while read line; do
 	case "$2" in

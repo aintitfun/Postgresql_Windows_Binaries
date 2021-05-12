@@ -1,3 +1,6 @@
+#!/usr/bin/bash
+sudo null 2>/dev/null
+
 case "$1" in
     "")
 	rm -rf openssl
